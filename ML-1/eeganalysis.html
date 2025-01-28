@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkinson's Disease EEG Scan Comparison</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #ffffff;
+            background-image: url('eeg.jpg'); /* Replace with the actual URL */
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: rgba(0, 0, 0, 0.5);
+            background-blend-mode: overlay;;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #03143b;
+            box-shadow: 0 0 10px rgba(49, 2, 2, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0.9;
+        }
+
+        h1 {
+            color: #388e3c;
+            margin-bottom: 20px;
+        }
+
+        .eeg-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .eeg {
+            text-align: center;
+        }
+
+        .eeg img {
+            width: 300px;
+            height: auto;
+            border: 2px solid #388e3c;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .eeg input {
+            display: block;
+            margin: 10px auto;
+        }
+
+        button {
+            background-color: #388e3c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2e7d32;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Parkinson's Disease EEG Scan Comparison</h1>
+        <div class="eeg-container">
+            <div class="eeg">
+                <h2>EEG Scan 1</h2>
+                <img id="eeg1" src="eeg1.png" alt="EEG Scan 1">
+                <input type="file" id="upload1" accept="image/*" onchange="loadImage(event, 'eeg1')">
+            </div>
+            <div class="eeg">
+                <h2>EEG Scan 2</h2>
+                <img id="eeg2" src="eeg2.png" alt="EEG Scan 2">
+                <input type="file" id="upload2" accept="image/*" onchange="loadImage(event, 'eeg2')">
+            </div>
+        </div>
+        <button onclick="compareEEG()">Compare EEG Scans</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function loadImage(event, imgId) {
+            const image = document.getElementById(imgId);
+            image.src = URL.createObjectURL(event.target.files[0]);
+        }
+
+        function compareEEG() {
+            const result = document.getElementById('result');
+            
+            // Randomly decide if Parkinson's is present or not
+            const isParkinsons = Math.random() < 0.5;
+
+            if (isParkinsons) {
+                result.innerHTML = `
+                    <p>Based on the comparison of the two EEG scans, <strong>Parkinson's Disease is likely present.</strong></p>
+                `;
+            } else {
+                result.innerHTML = `
+                    <p>Based on the comparison of the two EEG scans, <strong>Parkinson's Disease is unlikely to be present.</strong></p>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainAnalysis - Cognitive Function Check</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #121212;
+            color: #ffffff;
+            background-image: url('https://example.com/path-to-your-gpu-image.jpg'); /* Replace with the actual URL */
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem 2rem;
+        }
+        header .logo {
+            font-size: 1.5rem;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .quiz-container {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 2rem;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 2rem;
+            text-align: left;
+            width: 100%;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+        .quiz-container h2 {
+            margin-bottom: 1rem;
+        }
+        .quiz-container .question {
+            margin-bottom: 1rem;
+        }
+        .quiz-container .options {
+            list-style: none;
+            padding: 0;
+        }
+        .quiz-container .options li {
+            margin-bottom: 0.5rem;
+        }
+        .quiz-container button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+        .quiz-container button:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">BrainAnalysis</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services2.html">Services</a></li>
+                <li><a href="tech.html">Technology</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login/Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Check Your Cognitive Functions</h1>
+        <p>Engage in our interactive quiz to assess your cognitive functions.</p>
+        
+        <div class="quiz-container">
+            <h2>Question 1 of 3</h2>
+            <div class="question">
+                <p>What is 5 + 3?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q1" value="6"> 6</label></li>
+                    <li><label><input type="radio" name="q1" value="7"> 7</label></li>
+                    <li><label><input type="radio" name="q1" value="8"> 8</label></li>
+                    <li><label><input type="radio" name="q1" value="9"> 9</label></li>
+                </ul>
+            </div>
+            <button onclick="nextQuestion()">Next</button>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 BrainAnalysis. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentQuestion = 0;
+        const questions = [
+            {
+                question: 'What is 5 + 3?',
+                options: ['6', '7', '8', '9'],
+                answer: '8'
+            },
+            {
+                question: 'Which is the largest planet in our solar system?',
+                options: ['Earth', 'Mars', 'Jupiter', 'Saturn'],
+                answer: 'Jupiter'
+            },
+            {
+                question: 'What is the capital of France?',
+                options: ['Berlin', 'Madrid', 'Paris', 'Rome'],
+                answer: 'Paris'
+            }
+        ];
+
+        function nextQuestion() {
+            const selectedOption = document.querySelector('input[name="q1"]:checked');
+            if (!selectedOption) {
+                alert('Please select an option.');
+                return;
+            }
+
+            const answer = selectedOption.value;
+            const correctAnswer = questions[currentQuestion].answer;
+
+            if (answer === correctAnswer) {
+                alert('Correct!');
+            } else {
+                alert('Wrong answer.');
+            }
+
+            currentQuestion++;
+
+            if (currentQuestion < questions.length) {
+                loadQuestion();
+            } else {
+                alert('Quiz completed!');
+                currentQuestion = 0;
+                loadQuestion();
+            }
+        }
+
+        function loadQuestion() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.querySelector('h2').textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
+            quizContainer.querySelector('.question p').textContent = questions[currentQuestion].question;
+            
+            const optionsList = quizContainer.querySelector('.options');
+            optionsList.innerHTML = '';
+            questions[currentQuestion].options.forEach(option => {
+                const li = document.createElement('li');
+                li.innerHTML = `<label><input type="radio" name="q1" value="${option}"> ${option}</label>`;
+                optionsList.appendChild(li);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadQuestion);
+    </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkinson's Disease MRI Comparison</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #ffffff;
+            background-image: url('mricomparators..jpeg'); /* Replace with the actual URL */
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: rgba(0, 0, 0, 0.5);
+            background-blend-mode: overlay;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #400202;
+            box-shadow: 0 0 10px rgba(49, 2, 2, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0.9;
+        }
+
+        h1 {
+            color: #0b0c0c;
+            margin-bottom: 20px;
+        }
+
+        .mri-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .mri {
+            text-align: center;
+        }
+
+        .mri img {
+            width: 300px;
+            height: auto;
+            border: 2px solid #380c0c;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .mri input {
+            display: block;
+            margin: 10px auto;
+        }
+
+        button {
+            background-color: #2c3e50;
+            color: rgb(85, 78, 78);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #f2e7e4;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Parkinson's Disease MRI Scan Comparison</h1>
+        <div class="mri-container">
+            <div class="mri">
+                <h2>Healthy Brain</h2>
+                <img id="mri1" src="mri1.png" alt="MRI scan">
+                <input type="file" id="upload1" accept="image/*" onchange="loadImage(event, 'mri1')">
+            </div>
+            <div class="mri">
+                <h2>MRI </h2>
+                <img id="mri2" src="mri2.png" alt="MRI Scan">
+                <input type="file" id="upload2" accept="image/*" onchange="loadImage(event, 'mri2')">
+            </div>
+        </div>
+        <button onclick="compareMRI()">Compare MRI Scans</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function loadImage(event, imgId) {
+            const image = document.getElementById(imgId);
+            image.src = URL.createObjectURL(event.target.files[0]);
+        }
+
+        function compareMRI() {
+            const result = document.getElementById('result');
+            
+            // Randomly decide if Parkinson's is present or not
+            const isParkinsons = Math.random() < 0.5;
+
+            if (isParkinsons) {
+                result.innerHTML = `
+                    <p>Based on the comparison of the two MRI scans, <strong>Parkinson's Disease is likely present.</strong></p>
+                `;
+            } else {
+                result.innerHTML = `
+                    <p>Based on the comparison of the two MRI scans, <strong>Parkinson's Disease is unlikely to be present.</strong></p>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
+

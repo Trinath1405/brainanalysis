@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainAnalysis - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #121212;
+            color: #ffffff;
+            background-image: url('Home.jpg'); /* Replace with the actual URL */
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem 2rem;
+        }
+        header .logo {
+            font-size: 1.5rem;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .feature {
+            flex: 1;
+            padding: 1rem;
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">BrainAnalysis</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services2.html">Services</a></li>
+                <li><a href="tech.html">Technology</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login/Register</a></li>
+            </ul>
+        </nav>3
+    </header>
+    <main>
+        <h1>Advanced Brain Analysis Services</h1>
+        <p>Empowering Healthcare with Cutting-Edge Technology</p>
+        <button onclick="getStarted()">Get Started</button>
+        <div class="features">
+            <div class="feature">
+                <h2>Neuroimaging Analysis</h2>
+                <a href="neuroimaging.html" target="_blank">Explore Neuroimaging</a>
+                <p>Advanced MRI and CT scan analysis to detect abnormalities and provide detailed brain maps.</p>
+            </div>
+            <div class="feature">
+                <h2>EEG Analysis</h2>
+                <a href="eeg.html" target="_blank">Discover EEG Analysis</a>
+                <p>Comprehensive EEG analysis for diagnosing and monitoring neurological conditions.</p>
+            </div>
+            <div class="feature">
+                <h2>Cognitive Function Testing</h2>
+                <a href="cognitive.html" target="_blank">Check Cognitive Functions</a>
+                <p>Assessment of cognitive functions using state-of-the-art tools and methodologies.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 BrainAnalysis. All rights reserved.</p>
+    </footer>
+    <script>
+        function getStarted() {
+            window.location.href = 'services.html';
+        }
+        function completeQuiz(isCompleted) {
+            if (isCompleted) {
+                alert("Brain is functioning normally");
+            } else {
+                alert("Disease is detected");
+            }
+        }
+    </script>
+</body>
+</html>
+
+

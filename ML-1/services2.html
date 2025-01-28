@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainAnalysis - Our Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #121212;
+            color: #ffffff;
+            background-image: url('https://example.com/path-to-your-gpu-image.jpg'); /* Replace with the actual URL */
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem 2rem;
+        }
+        header .logo {
+            font-size: 1.5rem;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .service-card {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            border-radius: 5px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: scale(1.05);
+        }
+        .service-card h3 {
+            margin-bottom: 1rem;
+        }
+        .service-card p {
+            margin-bottom: 1rem;
+        }
+        .service-card button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+        .modal h2 {
+            margin-bottom: 1rem;
+        }
+        .modal p {
+            margin-bottom: 1rem;
+        }
+        .modal button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">BrainAnalysis</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services2.html">Services</a></li>
+                <li><a href="tech.html">Technology</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login/Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Our Services</h1>
+        <p>Explore our range of advanced brain analysis services designed to provide you with comprehensive insights.</p>
+        
+        <div class="services-container">
+            <div class="service-card">
+                <h3>Neuroimaging Analysis</h3>
+                <p>Advanced MRI and CT scan analysis to detect abnormalities and provide detailed brain maps.</p>
+                <button onclick="openModal('modal-neuroimaging')">Learn More</button>
+            </div>
+            <div class="service-card">
+                <h3>EEG Analysis</h3>
+                <p>Comprehensive EEG analysis for diagnosing and monitoring neurological conditions.</p>
+                <button onclick="openModal('modal-eeg')">Learn More</button>
+            </div>
+            <div class="service-card">
+                <h3>Cognitive Function Testing</h3>
+                <p>Assessment of cognitive functions using state-of-the-art tools and methodologies.</p>
+                <button onclick="openModal('modal-cognitive')">Learn More</button>
+            </div>
+        </div>
+    </main>
+    
+    <div id="modal-neuroimaging" class="modal">
+        <span class="modal-close" onclick="closeModal('modal-neuroimaging')">&times;</span>
+        <h2>Neuroimaging Analysis</h2>
+        <p>Our neuroimaging analysis services provide detailed insights into brain structure and function using advanced MRI and CT technology.</p>
+        <button onclick="closeModal('modal-neuroimaging')">Close</button>
+    </div>
+    
+    <div id="modal-eeg" class="modal">
+        <span class="modal-close" onclick="closeModal('modal-eeg')">&times;</span>
+        <h2>EEG Analysis</h2>
+        <p>Our EEG analysis services help in diagnosing and monitoring a range of neurological conditions with precision and accuracy.</p>
+        <button onclick="closeModal('modal-eeg')">Close</button>
+    </div>
+    
+    <div id="modal-cognitive" class="modal">
+        <span class="modal-close" onclick="closeModal('modal-cognitive')">&times;</span>
+        <h2>Cognitive Function Testing</h2>
+        <p>Our cognitive function testing services assess your cognitive abilities using the latest tools and methodologies.</p>
+        <button onclick="closeModal('modal-cognitive')">Close</button>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 BrainAnalysis. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

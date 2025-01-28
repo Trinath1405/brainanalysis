@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainAnalysis - Technology We Use</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #ffffff;
+            background-image: url('Tech.jpg'); /* Replace with the actual URL */
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: rgba(0, 0, 0, 0.5);
+            background-blend-mode: overlay;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem 2rem;
+        }
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        main {
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+        .technology-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        .technology-card {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 2rem;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        .technology-card h2 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .technology-card ul {
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+        .technology-card ul li {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">BrainAnalysis</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services2.html">Services</a></li>
+                <li><a href="tech.html">Technology</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login/Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>The Technology We Use</h1>
+        <p>Discover the cutting-edge technologies that power our advanced brain analysis services.</p>
+        
+        <div class="technology-container">
+            <div class="technology-card">
+                <h2>MRI (Magnetic Resonance Imaging)</h2>
+                <ul>
+                    <li>Non-invasive imaging technique</li>
+                    <li>High-resolution brain scans</li>
+                    <li>Detailed anatomical structure</li>
+                    <li>Detection of abnormalities</li>
+                    <li>Real-time brain activity monitoring</li>
+                </ul>
+            </div>
+            <div class="technology-card">
+                <h2>EEG (Electroencephalography)</h2>
+                <ul>
+                    <li>Records electrical activity of the brain</li>
+                    <li>Helps diagnose neurological disorders</li>
+                    <li>Monitors brain activity during sleep</li>
+                    <li>Assesses cognitive functions</li>
+                    <li>Used in epilepsy treatment</li>
+                </ul>
+            </div>
+            <div class="technology-card">
+                <h2>CT (Computed Tomography) Scan</h2>
+                <ul>
+                    <li>Combines X-ray images for detailed brain structure</li>
+                    <li>Quick and accurate imaging</li>
+                    <li>Detects bleeding, tumors, and injuries</li>
+                    <li>Guides surgical planning</li>
+                    <li>Monitors treatment effectiveness</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 BrainAnalysis. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.technology-card');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainAnalysis - EEG Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #121212;
+            color: #ffffff;
+            background-image: url('https://example.com/path-to-your-gpu-image.jpg'); /* Replace with the actual URL */
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem 2rem;
+        }
+        header .logo {
+            font-size: 1.5rem;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 2rem;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 2rem;
+            text-align: left;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+        }
+        .form-container button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">BrainAnalysis</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services2.html">Services</a></li>
+                <li><a href="tech.html">Technology</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login/Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>EEG Analysis</h1>
+        <p>Submit your details for a comprehensive EEG analysis.</p>
+        
+        <div class="form-container">
+            <form id="eeg-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+
+                <label for="symptoms">Symptoms/Concerns:</label>
+                <textarea id="symptoms" name="symptoms" rows="4" required></textarea>
+
+                <label for="file">Upload EEG Data:</label>
+                <input type="file" id="file" name="file" accept=".jpg, .jpeg, .png, .pdf, .edf" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 BrainAnalysis. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('eeg-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Form submitted successfully!');
+            window.location.href = 'eeganalysis.html';
+            // Here you can add your form submission logic, e.g., sending the data to a server
+        });
+    </script>
+</body>
+</html>
