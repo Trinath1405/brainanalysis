@@ -1,2 +1,2 @@
 # brainanalysis
-parkinsons disease prediction using MRI ( fronntend)
+parkinsons disease prediction using MRI ( frontend)
